@@ -7,6 +7,8 @@ This is a Malay pipeline that allows you to tokenizer, lemmatize, and Part Of Sp
 * The lemmatizer and POS tagger models, which are PyTorch models, are set to evaluation mode.
 * The lemmatizer and POS tagger models are ran within a PyTorch inference context manager which speeds up and reduces the memory usage of the model.
 
+**NOTE** the POS tagger outputs tags from the [Universal POS tagset](https://universaldependencies.org/u/pos/) as well as a `PUNCT` tag representing punctuation.
+
 ## Install
 
 ``` bash

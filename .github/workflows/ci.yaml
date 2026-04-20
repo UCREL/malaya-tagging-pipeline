@@ -47,7 +47,7 @@ jobs:
         run: echo "uv cache was restored"
 
       - name: Check HF model cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: cache
         with:
           path: ~/hf_test_model_cache
@@ -58,7 +58,7 @@ jobs:
         run: uv run tests/model_download.py $HOME/hf_test_model_cache
 
       - name: Saving HuggingFace test model
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         if: steps.cache.outputs.cache-hit != 'true'
         with:
           path: ~/hf_test_model_cache
@@ -125,7 +125,7 @@ jobs:
           echo "HF_HOME=$HOME/.cache/huggingface" >> "$GITHUB_ENV"
 
       - name: Get HF model cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ~/hf_test_model_cache
           key: malaya-models-${{ runner.os }}
@@ -135,7 +135,7 @@ jobs:
         run: mv $HOME/hf_test_model_cache/* $HF_HOME/hub/.
 
       - name: Check cache files
-        run: ls $HF_HOME
+        run: ls $HF_HOME/hub
 
       - name: Code coverage unit testing
         run: |
