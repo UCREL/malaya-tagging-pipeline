@@ -11,14 +11,14 @@ This is a Malay pipeline that allows you to tokenizer, lemmatize, and Part Of Sp
 
 ## Install
 
-Using Pip:
+Using Pip (installs the tag `v0.1.0`):
 ``` bash
-pip install "malaya-tagging-pipeline @ git+https://github.com/UCREL/malaya-tagging-pipeline"
+pip install "malaya-tagging-pipeline @ git+https://github.com/UCREL/malaya-tagging-pipeline.git@e0cdbc9158e7d14549ed44c5d83a933a2b3976a9"
 ```
 
-Using UV:
+Using UV (installs the tag `v0.1.0`):
 ``` bash
-uv add "malaya-tagging-pipeline" git+https://github.com/UCREL/malaya-tagging-pipeline
+uv add --optional malay "malaya-tagging-pipeline==0.1.0" git+https://github.com/UCREL/malaya-tagging-pipeline@e0cdbc9158e7d14549ed44c5d83a933a2b3976a9
 ```
 
 ## Example
