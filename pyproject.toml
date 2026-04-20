@@ -1,0 +1,66 @@
+[project]
+name = "malaya-tagging-pipeline"
+version = "0.1.0"
+description = "Malay tokenizer, lemmatizer, POS tagging pipeline"
+authors = [
+    { name = "UCREL Research Centre", email = "ucrel@lancaster.ac.uk" },
+]
+license = "Apache-2.0"
+license-files = [
+    "LICENSE",
+]
+classifiers = [
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+]
+requires-python = ">=3.10, <3.15"
+dependencies = [
+    "malaya>=5.1.1",
+    "torch>=2.11.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.1,<0.12.0"]
+build-backend = "uv_build"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[dependency-groups]
+dev = [
+    "coverage[toml]>=7.13.1",
+    "pip>=26.0.1",
+    "pytest>=9.0.2",
+    "ruff>=0.14.13",
+    "ty>=0.0.13",
+]
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = [
+    "tests"
+]
+
+[tool.coverage.run]
+branch = true
+source = [
+    "src"
+]
+command_line = "-m pytest"
+
+[tool.coverage.report]
+show_missing = true
