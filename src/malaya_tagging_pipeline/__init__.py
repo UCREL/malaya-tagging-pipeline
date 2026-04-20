@@ -1,3 +1,4 @@
+import importlib.metadata
 import inspect
 import re
 from typing import Any, Type, cast
@@ -18,6 +19,7 @@ from malaya.torch_model.rnn import Stem as MalayaStem
 from malaya_boilerplate.torch_utils import to_numpy
 from transformers import PreTrainedTokenizerFast
 
+__version__ = importlib.metadata.version("malaya_tagging_pipeline")
 WHITESPACE_SPLITTER_RE = re.compile(r"\s+")
 
 
