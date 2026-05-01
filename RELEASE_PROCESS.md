@@ -40,7 +40,7 @@ to `git@github.com:UCREL/malaya-tagging-pipeline.git` (or the `HTTPS` equivalent
     git tag -s $TAG && git push origin main --tags
     ```
 
-6. Find the tag you just pushed [on GitHub](https://github.com/UCREL/WSD-Torch-Models/tree/main), click the "..." to the right of the "Verified" badge, and then click "Create release". Set the title of the release to "v{VERSION}" and copy the output from the following script into the markdown text box:
+6. Find the tag you just pushed [on GitHub](https://github.com/UCREL/malaya-tagging-pipeline/tree/main), click the "..." to the right of the "Verified" badge, and then click "Create release". Set the title of the release to "v{VERSION}" and copy the output from the following script into the markdown text box:
 
     ``` bash
     make release-notes
